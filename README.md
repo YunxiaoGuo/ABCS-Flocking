@@ -20,10 +20,15 @@ The MADDPG part is come from: [MADDPG](https://gitee.com/ming_autumn/MADDPG-1?_f
 ## Training Agents
 
 ```shell
-python main.py --scenario-name=csenv --n-agents=5 --evaluate-episodes=256
+python main.py --n-agents=5 --evaluate-episodes=256
 ```
 
 Running the main.py, the agents will learn from the flocking scenario.
+
+## Testing Agents
+```shell
+python main.py --n-agents=5 --evaluate-episodes=10 --evaluate=True
+```
 
 ## Display Results
 

@@ -1,9 +1,6 @@
-from runner import Runner
+from common.runner import Runner
 from common.arguments import get_args
 from common.utils import make_env
-import numpy as np
-import random
-import torch
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 

@@ -5,10 +5,10 @@ from algo.ABCS import MADDPG
 
 
 class Agent:
-    def __init__(self, agent_id, args):
+    def __init__(self, agent_id, args, worker_num):
         self.args = args
         self.agent_id = agent_id
-        self.policy = MADDPG(args, agent_id)
+        self.policy = MADDPG(args, agent_id, worker_num)
 
     def select_action(self, o, noise_rate, epsilon):
         if np.random.uniform() < epsilon:

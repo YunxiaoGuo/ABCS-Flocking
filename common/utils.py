@@ -2,8 +2,10 @@ import numpy as np
 import inspect
 import functools
 import sys
+
 sys.path.append("..")
-import envs.Flocking_Env as flocking_env
+from envs import CS_flocking
+
 
 def store_args(method):
     """Stores provided method args as instance attributes.
@@ -33,27 +35,14 @@ def store_args(method):
 
 
 def make_env(args):
-    from multiagent.environment import MultiAgentEnv
-    import multiagent.scenarios as scenarios
-
-    # load scenario from script
-    #scenario = scenarios.load(args.scenario_name + ".py").Scenario()
-
-    # create world
-    #world = scenario.make_world()
-    # create multiagent environment
-    #env = MultiAgentEnv(world, scenario.reset_world, scenario.reward, scenario.observation)#
-    env = flocking_env.CS_flocking(args.n_agents)
-    args.n_players = env.n  # 包含敌人的所有玩家个数
-    args.n_agents = env.n #- args.num_adversaries  # 需要操控的玩家个数，虽然敌人也可以控制，但是双方都学习的话需要不同的算法
-    args.obs_shape = [env.observation_space[i].shape[0] for i in range(args.n_agents)]  # 每一维代表该agent的obs维度
-    #print(args.obs_shape)
+    env = CS_flocking(args.n_agents, args)
+    args.n_players = env.n
+    args.n_agents = env.n
+    args.obs_shape = [env.observation_space[i].shape[0] for i in range(args.n_agents)]
     action_shape = []
     for content in env.action_space:
-        #print(content.shape[0])
         action_shape.append(content.shape[0])
-    args.action_shape = action_shape[:args.n_agents]  # 每一维代表该agent的act维度
+    args.action_shape = action_shape[:args.n_agents]
     args.high_action = 1
     args.low_action = -1
-    
     return env, args

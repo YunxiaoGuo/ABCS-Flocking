@@ -1,1 +1,2 @@
-from .Flocking_Env import CS_flocking
+from .csenv import CS_flocking
+__all__ = ["CS_flocking"]

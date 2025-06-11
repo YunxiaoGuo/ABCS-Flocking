@@ -4,8 +4,9 @@ from algo.actor_critic import Actor, Critic
 
 
 class MADDPG:
-    def __init__(self, args, agent_id):  # 因为不同的agent的obs、act维度可能不一样，所以神经网络不同,需要agent_id来区分
+    def __init__(self, args, agent_id, worker_num):
         self.args = args
+        self.worker_num = worker_num
         self.agent_id = agent_id
         self.train_step = 0
 
@@ -29,7 +30,8 @@ class MADDPG:
         if not os.path.exists(self.args.save_dir):
             os.mkdir(self.args.save_dir)
         # path to save the model
-        self.model_path = self.args.save_dir + '/' + self.args.scenario_name
+        # self.model_path = self.args.save_dir + '/' + self.args.scenario_name
+        self.model_path = self.args.save_dir + '/' + '%s-%s-agents-thread-%s'%(self.args.scenario_name, self.args.n_agents, self.worker_num)
         if not os.path.exists(self.model_path):
             os.mkdir(self.model_path)
         self.model_path = self.model_path + '/' + 'agent_%d' % agent_id
@@ -56,7 +58,10 @@ class MADDPG:
     # update the network
     def train(self, transitions, other_agents):
         for key in transitions.keys():
-            transitions[key] = torch.tensor(transitions[key], dtype=torch.float32)
+            if isinstance(transitions[key],torch.Tensor):
+                transitions[key] = transitions[key].clone().detach()
+            else:
+                transitions[key] = torch.tensor(transitions[key], dtype=torch.float32)
         r = transitions['r_%d' % self.agent_id]  # 训练时只需要自己的reward
         o, u, o_next = [], [], []  # 用来装每个agent经验中的各项
         for agent_id in range(self.args.n_agents):
@@ -105,13 +110,13 @@ class MADDPG:
 
     def save_model(self, train_step):
         num = str(train_step // self.args.save_rate)
-        model_path = os.path.join(self.args.save_dir, self.args.scenario_name)
-        if not os.path.exists(model_path):
-            os.makedirs(model_path)
-        model_path = os.path.join(model_path, 'agent_%d' % self.agent_id)
-        if not os.path.exists(model_path):
-            os.makedirs(model_path)
-        torch.save(self.actor_network.state_dict(), model_path + '/' + num + '_actor_params.pkl')
-        torch.save(self.critic_network.state_dict(),  model_path + '/' + num + '_critic_params.pkl')
+        # model_path = os.path.join(self.args.save_dir, self.args.scenario_name)
+        # if not os.path.exists(model_path):
+        #     os.makedirs(model_path)
+        # model_path = os.path.join(model_path, 'agent_%d' % self.agent_id)
+        # if not os.path.exists(model_path):
+        #     os.makedirs(model_path)
+        torch.save(self.actor_network.state_dict(), self.model_path + '/' + num + '_actor_params.pkl')
+        torch.save(self.critic_network.state_dict(),  self.model_path + '/' + num + '_critic_params.pkl')
 
 

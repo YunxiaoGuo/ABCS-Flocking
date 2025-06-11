@@ -17,13 +17,22 @@ The MADDPG part is come from: [MADDPG](https://gitee.com/ming_autumn/MADDPG-1?_f
 
 **Extract code: MARL**
 
-## Training Agents
+## Complie Cython Code
+Before running the code, please complie the environment code:
 
+```shell
+cd ./envs
+python setup.py build_ext --inplace --force
+```
+
+## Training Agents
+Running the main.py, the agents will learn from the flocking scenario：
 ```shell
 python main.py --n-agents=5 --evaluate-episodes=256
 ```
+If you want to adjust the parameters, please see the `./common/arguments.py` for more details.
 
-Running the main.py, the agents will learn from the flocking scenario.
+
 
 ## Testing Agents
 ```shell

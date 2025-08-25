@@ -1,4 +1,4 @@
-# ABCS Flocking: A Leader-Follower Collision Free UAV Flocking System with Multi-Agent Reinforcement Learning
+# An invulnerable leader–follower collision-free unmanned aerial vehicle flocking system with attention-based Multi-Agent Reinforcement Learning
 
 
 > This is the **Attention Based Cucker-Smale Flocking algorithm**  implementation on [Multi-Agent Particle Environment(MPE)](https://github.com/openai/multiagent-particle-envs), the corresponding paper is [An invulnerable leader–follower collision-free unmanned aerial vehicle flocking system with attention-based Multi-Agent Reinforcement Learning](https://doi.org/10.1016/j.engappai.2025.111797) 

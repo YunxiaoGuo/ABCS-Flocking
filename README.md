@@ -55,7 +55,7 @@ If you use this code, please cite our paper:
 2025,160, Part C,111797,doi: 10.1016/j.engappai.2025.111797. 
 
 Bibtex form:
-
+```
 @article{GUO2025111797,
 author = {Yunxiao Guo and Dan Xu and Chang Wang and Jinxi Li and Han Long},
 title = {An invulnerable leader–follower collision-free unmanned aerial vehicle flocking system with attention-based Multi-Agent Reinforcement Learning},
@@ -67,3 +67,4 @@ issn = {0952-1976},
 doi = {https://doi.org/10.1016/j.engappai.2025.111797},
 url = {https://www.sciencedirect.com/science/article/pii/S0952197625017993}
 }
+```

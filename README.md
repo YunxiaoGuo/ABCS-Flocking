@@ -50,10 +50,10 @@ python display.py
 # Citation
 
 If you use this code, please cite our paper:
-
+```
 [1] Yunxiao Guo, Dan Xu, Chang Wang, Jinxi Li, Han Long, An invulnerable leader–follower collision-free unmanned aerial vehicle flocking system with attention-based Multi-Agent Reinforcement Learning,Engineering Applications of Artificial Intelligence,
 2025,160, Part C,111797,doi: 10.1016/j.engappai.2025.111797. 
-
+```
 Bibtex form:
 ```
 @article{GUO2025111797,

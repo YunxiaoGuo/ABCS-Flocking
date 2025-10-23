@@ -1,7 +1,7 @@
 # An invulnerable leader–follower collision-free unmanned aerial vehicle flocking system with attention-based Multi-Agent Reinforcement Learning
 
 
-> This is the **Attention Based Cucker-Smale Flocking algorithm** (A Multi-Agent Reinforcement Learning Algorithm for UAV Flocking) implementation on [Multi-Agent Particle Environment(MPE)](https://github.com/openai/multiagent-particle-envs), the corresponding paper is [An invulnerable leader–follower collision-free unmanned aerial vehicle flocking system with attention-based Multi-Agent Reinforcement Learning](https://doi.org/10.1016/j.engappai.2025.111797) 
+> This is the **Attention Based Cucker-Smale Flocking algorithm** (A Multi-Agent Reinforcement Learning Algorithm for UAV/Drone Flocking) implementation on [Multi-Agent Particle Environment(MPE)](https://github.com/openai/multiagent-particle-envs), the corresponding paper is [An invulnerable leader–follower collision-free unmanned aerial vehicle flocking system with attention-based Multi-Agent Reinforcement Learning](https://doi.org/10.1016/j.engappai.2025.111797) 
 
 The MADDPG part is come from: [MADDPG](https://gitee.com/ming_autumn/MADDPG-1?_from=gitee_search)
 

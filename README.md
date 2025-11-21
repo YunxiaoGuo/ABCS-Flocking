@@ -25,7 +25,7 @@ pip install -r requirements.txt
 **Extract code: MARL**
 
 ## Complie Cython Code
-Before running the code, please complie the environment code (Or download the release version from: [release], and put it in `./envs`):
+Before running the code, please complie the environment code (Or download the complied version (`.pyd` file) from: [release](https://github.com/YunxiaoGuo/ABCS-Flocking/releases), and put `.pyd` in `./envs`):
 
 ```shell
 cd ./envs

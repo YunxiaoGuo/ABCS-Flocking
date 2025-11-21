@@ -1,0 +1,10 @@
+Cython==3.2.1
+gym==0.26.2
+matplotlib==3.10.7
+numpy==2.3.5
+pandas==2.3.3
+Pillow==12.0.0
+seaborn==0.13.2
+setuptools==75.1.0
+torch==1.1.0
+tqdm==4.67.1

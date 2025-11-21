@@ -8,17 +8,24 @@ The MADDPG part is come from: [MADDPG](https://gitee.com/ming_autumn/MADDPG-1?_f
 
 ## Requirements
 
-- python=3.6.5
+### Key Requirements
+
+- python>=3.6.5
 - [Multi-Agent Particle Environment(MPE)](https://github.com/openai/multiagent-particle-envs)
 - torch=1.1.0
 
+The full requirements can be installed by:
 
-**Or download the python environment directly: [LG-CS.zip](https://pan.baidu.com/s/1ODtPNWxLOWAHcw7ZDz2sWw)**
+```
+pip install -r requirements.txt
+```
+
+**If you are troubled in installation of the requirements. We provide the Anaconda-python environment that you can download directly: [LG-CS.zip](https://pan.baidu.com/s/1ODtPNWxLOWAHcw7ZDz2sWw/MARL)**
 
 **Extract code: MARL**
 
 ## Complie Cython Code
-Before running the code, please complie the environment code:
+Before running the code, please complie the environment code (Or download the release version from: [release], and put it in `./envs`):
 
 ```shell
 cd ./envs

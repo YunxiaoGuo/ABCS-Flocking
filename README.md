@@ -10,7 +10,7 @@ The MADDPG part is come from: [MADDPG](https://gitee.com/ming_autumn/MADDPG-1?_f
 
 ### Key Requirements
 
-- python>=3.6.5
+- python>=3.6.5 (we recommend python==3.9)
 - [Multi-Agent Particle Environment(MPE)](https://github.com/openai/multiagent-particle-envs)
 - torch=1.1.0
 
